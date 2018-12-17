@@ -1,11 +1,10 @@
-frequencyArray = []
 
 def main():
-  with open("puzzle_input.txt", "r") as puzzle_input:
-	frequencyArray = []
-	for line in puzzle_input:
-  	frequencyArray.append(int(line))
-  print(sum(frequencyArray))
+  with open("puzzle_input.txt", "r") as e:
+    frequencyList = []
+    for line in e:
+      frequencyList.append(int(line))
+  print(sum(frequencyList))
 
 # Standard boilerplate to call the main() function to begin
 # the program.
