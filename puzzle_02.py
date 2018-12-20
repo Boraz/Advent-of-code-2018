@@ -9,25 +9,45 @@ def populateArray():
 
 def sol_p2():
     with open("puzzle_input.txt", "r") as f:
-        lines = [int(x) for x in f.readlines()]
+      lines = [int(x) for x in f.readlines()]
     freq = 0
     index = 0
     seen = set()
     while freq not in seen:
-        seen.add(freq)
-        freq += lines[index % len(lines)]
-        index += 1
+      seen.add(freq)
+      freq += lines[index % len(lines)]
+      index += 1
     return freq, index
+
+def Rabin_Karp():
+  double = false
+  doubles = 0
+
+  tripple = false
+  tripples = 0
+
+  seen = set()
+  with open("puzzle_input_02.txt", "r") as f:
+    lines = [int(x) for x in f.read()]
+  while letter not in seen:
+      seen.add()
+      if letter in set:
+        if double is true:
+          tripple = true
+          double = false
+      if double:
+        doubles += 1
+        double = false
+      if tripple:
+        tripples += 1
+        tripple = false
+  print(doubles * tripples)
+
 
 # Gather our code in a main() function
 def main():
 
-  print("Puzzle 1")
-  populateArray()
-
   print("Puzzle 2")
-  print("Result found: {0} at iteration {1}".format(*sol_p2()))
-  
 
 # Standard boilerplate to call the main() function to begin
 # the program.
