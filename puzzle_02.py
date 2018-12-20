@@ -1,55 +1,42 @@
 #!/usr/bin/env python
 
-def populateArray():
-  with open("puzzle_input.txt", "r") as e:
-    frequencyList = []
-    for line in e:
-      frequencyList.append(int(line))
-  print(sum(frequencyList))
-
-def sol_p2():
-    with open("puzzle_input.txt", "r") as f:
-      lines = [int(x) for x in f.readlines()]
-    freq = 0
-    index = 0
-    seen = set()
-    while freq not in seen:
-      seen.add(freq)
-      freq += lines[index % len(lines)]
-      index += 1
-    return freq, index
-
-def Rabin_Karp():
-  double = false
+# Iterate over the characters in a line and count duplicates and triplicates
+def set_match():
+  double = False
   doubles = 0
-
-  tripple = false
+  tripple = False
   tripples = 0
-
   seen = set()
-  with open("puzzle_input_02.txt", "r") as f:
-    lines = [int(x) for x in f.read()]
-  while letter not in seen:
-      seen.add()
-      if letter in set:
-        if double is true:
-          tripple = true
-          double = false
-      if double:
-        doubles += 1
-        double = false
-      if tripple:
-        tripples += 1
-        tripple = false
-  print(doubles * tripples)
+  with open("puzzle_input_02.txt") as f:
+    while True:
+      c = f.read(1)
+      if not c:
+        print("End of file")
+        break
+      while c not in seen:
+        if c == '\n':
+          break
+        seen.add(c)
+      #if letter in set:
+       # if double is True:
+        #  tripple = True
+         # double = False
+      #if double:
+       # doubles += 1
+        #double = False
+      #if tripple:
+       # tripples += 1
+        #tripple = False
+  #print(doubles * tripples)
+  print(seen)
 
 
 # Gather our code in a main() function
 def main():
 
   print("Puzzle 2")
+  set_match()
 
-# Standard boilerplate to call the main() function to begin
-# the program.
+# Standard boilerplate to call the main() function
 if __name__ == '__main__':
   main()
